@@ -32,13 +32,16 @@ class DefaultView: VerticalLayout(), View {
 		addStyleName("layoutMargin")
 
 		val changeLog = VerticalLayout()
-		changeLog.setSizeFull()
+		changeLog.setWidth("100%")
+		changeLog.setHeight("100px")
 
 		changeLog.addComponent(Label("This is default view"))
 
-		val frame = BrowserFrame("Embedded", ExternalResource("http://localhost:9090"))
+		val frame = BrowserFrame("Embedded", ExternalResource("http://localhost:8080/embedded.html"))
+		frame.setHeight("100%")
+		frame.setWidth("100%")
 		addComponents(changeLog, frame)
-		setExpandRatio(changeLog, 1f)
+		setExpandRatio(frame, 1f)
 	}
 
 	companion object {
